@@ -28,6 +28,7 @@ class SixJars:
     def __str__(self):
         str =  '[Initial]\n'
         str += 'Total income: %.02f\n' % (self.income)
+        str += 'Total cutoff: %.02f\n' % (self.cutoff)
         str += 'NEC: 60%%   --- %.02f x 0.6 = %.02f\n' % (self.income, self.get_NEC())
         str += '\n'
 
