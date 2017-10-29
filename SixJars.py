@@ -7,8 +7,8 @@ class SixJars:
     def get_NEC(self): # Necessities Account
         return self.income * 0.6
 
-    def get__FFA(self): # Financial Freedom
-        return self.income * 0.2
+    def get_FFA(self): # Financial Freedom
+        return self.cutoff * 0.2
 
     def get_GIVE(self):
         return self.cutoff * 0.05
@@ -28,7 +28,7 @@ class SixJars:
     def __str__(self):
         str =  '[Initial]\n'
         str += 'Total income: %.02f\n' % (self.income)
-        str += 'NEC: 20%%   --- %.02f x 0.2 = %.02f\n' % (self.cutoff, self.get_NEC())
+        str += 'NEC: 60%%   --- %.02f x 0.6 = %.02f\n' % (self.income, self.get_NEC())
         str += '\n'
 
         str += '[HOT]\n'
@@ -38,10 +38,10 @@ class SixJars:
         str += '\n'
 
         str += '[COLD]\n'
-        str += 'FFA: 20%%   --- %.02f x 0.2 = %.02f\n' % (self.cutoff, self.get__FFA())
+        str += 'FFA: 20%%   --- %.02f x 0.2 = %.02f\n' % (self.cutoff, self.get_FFA())
         str += 'LTSS1: 20%% --- %.02f x 0.2 = %.02f\n' % (self.cutoff, self.get_LTSS_1())
         str += 'LTSS2: 20%% --- %.02f x 0.2 = %.02f\n' % (self.cutoff, self.get_LTSS_2())
         str += '\n'
         return str
 
-print SixJars(3201)
+print SixJars(1500)
